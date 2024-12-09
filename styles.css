@@ -156,8 +156,8 @@ nav {
     color: white; /* Ensure subtitle remains visible */
 }
 .cta-button {
-    background: #ffffff;
-    color: #1F665C;
+    background: #1F665C;
+    color: white;
     padding: 10px 20px;
     font-size: 1em;
     font-weight: bold;
@@ -169,7 +169,7 @@ nav {
 }
 .cta-button a {
     text-decoration: none;
-    color: #1F665C;
+    color: white;
 }
 .cta-button:hover {
     background: #c0d9f2;
@@ -348,3 +348,79 @@ footer a:hover {
         width: 100%;
     }
 }
+/* Hero Section for About Page */
+.hero-about {
+    background: url('about-hero.jpg') center/cover no-repeat; /* Replace with your image */
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.hero-about .hero-content h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    background: #f8f9fa;
+    color: #333;
+}
+
+.about .container {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.about p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+/* Active Navigation Link */
+.nav-links .active {
+    color: #FFD700; /* Gold color to indicate active page */
+}
+
+/* Responsive Hero Text */
+@media (max-width: 768px) {
+    .hero-about .hero-content h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-about .hero-content h1 {
+        font-size: 2em;
+    }
+}
+/* Location Section */
+.location {
+    padding: 40px 20px;
+    background: #f8f9fa;
+    text-align: center;
+    color: #333;
+}
+
+.location h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1F665C;
+}
+
+.location p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.map iframe {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
