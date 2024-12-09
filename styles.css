@@ -39,6 +39,7 @@ nav {
 .logo {
     font-size: 1.8em;
     font-weight: bold;
+    color: white
 }
 
 .menu-toggle {
@@ -272,4 +273,78 @@ footer a:hover {
     text-decoration: underline; /* Adds an underline on hover for clarity */
 }
 
+/* Donate Section */
+.donate {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f8f9fa; /* Light background */
+}
 
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1F665C;
+}
+
+.donate p {
+    font-size: 1.2em;
+    margin: 0 auto 30px;
+    max-width: 800px;
+    color: #333;
+}
+
+.donation-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.donation-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: calc(33.33% - 20px);
+    max-width: 400px;
+}
+
+.donation-card h2 {
+    font-size: 1.8em;
+    color: #1F665C;
+    margin-bottom: 15px;
+}
+
+.donation-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.cta-button a {
+    text-decoration: none;
+    color: white;
+    background: #1F665C;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-button a:hover {
+    background: #145A4C;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .donation-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .donation-card {
+        width: 100%;
+    }
+}
