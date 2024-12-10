@@ -424,3 +424,72 @@ footer a:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Hero Section for Contact Page */
+.hero-contact {
+    background: url('contact-hero.jpg') center/cover no-repeat; /* Replace with a relevant image */
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.hero-contact .hero-content h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.contact .container {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1F665C;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.contact-details p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.contact-details a {
+    color: #1F665C;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Hero Text */
+@media (max-width: 768px) {
+    .hero-contact .hero-content h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-contact .hero-content h1 {
+        font-size: 2em;
+    }
+}
