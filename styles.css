@@ -524,3 +524,63 @@ footer a:hover {
     background: #145A4C;
 }
 
+@keyframes flash-border {
+    0% {
+        border-color: #d32f2f;
+    }
+    50% {
+        border-color: #fbc02d;
+    }
+    100% {
+        border-color: #d32f2f;
+    }
+}
+
+.fundraiser {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.fundraiser-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fundraiser h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #145A4C;
+}
+
+.fundraiser p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.fundraiser .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #145A4C;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.fundraiser .btn:hover {
+    background-color: #0d61af;
+}
+.fundraiser-banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
