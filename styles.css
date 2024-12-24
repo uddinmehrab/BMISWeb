@@ -584,3 +584,78 @@ footer a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Fundraiser Info Section */
+.fundraiser-info {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fundraiser-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fundraiser-banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fundraiser-info h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #145A4C;
+}
+
+.fundraiser-info p, .fundraiser-info ul {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.fundraiser-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+.fundraiser-info .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #145A4C;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.fundraiser-info .btn:hover {
+    background-color: #0d61af;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .fundraiser-info {
+        padding: 20px 10px;
+    }
+
+    .fundraiser-info h2 {
+        font-size: 24px;
+    }
+
+    .fundraiser-info p, .fundraiser-info ul {
+        font-size: 16px;
+    }
+
+    .fundraiser-info .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
