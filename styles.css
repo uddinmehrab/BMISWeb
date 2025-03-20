@@ -12,9 +12,6 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-
-
-/* Navigation Bar */
 /* Navigation Bar */
 nav {
     display: flex;
@@ -76,7 +73,6 @@ nav {
     .menu-toggle {
         display: block; /* Show hamburger menu on small screens */
     }
-
     .nav-links {
         display: none; /* Hide navigation links by default */
         flex-direction: column;
@@ -84,12 +80,10 @@ nav {
         background: #1F665C;
         padding: 10px;
     }
-
     .nav-links.active {
         display: flex; /* Show navigation links when active */
     }
 }
-
 
 /* Hero Section */
 .hero, .hero-about, .hero-contact {
@@ -102,8 +96,18 @@ nav {
 }
 
 .hero {
-    background: url('img/mosque-hero.jpg') center/cover no-repeat;
+    background: url('img/mosque-hero.jpg') top center no-repeat;
+    background-size: cover;
     height: 70vh;
+}
+
+/* Add media query for large screens */
+@media (min-width: 1200px) {
+    .hero {
+        background-position: top center;
+        /* Ensure the image covers the container while keeping aspect ratio */
+        background-size: 100% auto;
+    }
 }
 
 .hero-about {
@@ -157,7 +161,6 @@ nav {
         font-size: 2.5em; /* Reduce font size for smaller screens */
     }
 }
-
 
 .hero h1, .hero-about .hero-content h1, .hero-contact .hero-content h1 {
     font-size: 3em;
@@ -244,7 +247,6 @@ nav {
     }
 }
 
-
 .prayer-times {
     background: #f8f9fa; /* Light background */
     padding: 40px 20px;
@@ -271,8 +273,6 @@ nav {
     text-align: center;
     margin-bottom: 10px;
 }
-
-
 
 /* Footer */
 footer {
@@ -358,12 +358,10 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
     }
-
     .donation-card {
         width: 100%;
     }
 }
-/* Hero Section for About Page */
 
 /* About Section */
 .about {
@@ -400,6 +398,7 @@ footer a:hover {
         font-size: 2em;
     }
 }
+
 /* Location Section */
 .location {
     padding: 40px 20px;
@@ -548,15 +547,12 @@ footer a:hover {
     .fundraiser, .fundraiser-info {
         padding: 20px 10px;
     }
-
     .fundraiser h2, .fundraiser-info h2 {
         font-size: 24px;
     }
-
     .fundraiser p, .fundraiser-info p, .fundraiser-info ul {
         font-size: 16px;
     }
-
     .btn {
         padding: 10px 20px;
         font-size: 16px;
