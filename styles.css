@@ -155,6 +155,7 @@ nav {
     margin-bottom: 25px;
     color: white; /* Ensure subtitle remains visible */
 }
+
 .cta-button {
     background: #1F665C;
     color: white;
@@ -166,14 +167,19 @@ nav {
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
+    display: inline-block;
 }
+
 .cta-button a {
     text-decoration: none;
     color: white;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
+
 .cta-button:hover {
-    background: #c0d9f2;
-    color: white;
+    background: #145A4C;
 }
 
 /* Services Section */
@@ -320,21 +326,6 @@ footer a:hover {
     font-size: 1em;
     margin-bottom: 20px;
     color: #555;
-}
-
-.cta-button a {
-    text-decoration: none;
-    color: white;
-    background: #1F665C;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.cta-button a:hover {
-    background: #145A4C;
 }
 
 /* Responsive Layout */
@@ -504,24 +495,6 @@ footer a:hover {
     font-size: 1.8em;
     margin-bottom: 15px;
     color: #1F665C;
-}
-
-.full-year-calendar .cta-button {
-    background: #1F665C;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.full-year-calendar .cta-button a {
-    color: white;
-    text-decoration: none;
-}
-
-.full-year-calendar .cta-button:hover {
-    background: #145A4C;
 }
 
 @keyframes flash-border {
