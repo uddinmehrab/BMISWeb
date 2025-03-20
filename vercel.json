@@ -20,10 +20,6 @@
       {
         "source": "/contact",
         "destination": "/contact.html"
-      },
-      {
-        "source": "/annualfundraiser",
-        "destination": "/annualfundraiser.html"
       }
     ],
     "headers": [
@@ -38,4 +34,4 @@
       }
     ]
   }
-  
+
