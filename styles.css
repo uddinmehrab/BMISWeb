@@ -608,3 +608,7 @@ footer a:hover {
     background-color: #e6f2ff;
     border-left: 4px solid #1F665C;
 }
+
+.future-masjid-hero {
+    background: url('img/future-masjid.jpeg') top center no-repeat;
+}
