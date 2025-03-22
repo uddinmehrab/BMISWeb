@@ -628,3 +628,30 @@ footer a:hover {
         margin-bottom: 20px;
     }
 }
+
+.progress-container {
+    background-color: #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+    position: relative;
+}
+.progress-bar {
+    background-color: #1F665C;
+    color: white;
+    width: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 2s ease-in-out;
+    font-size: 0.9em;
+}
+.progress-stats {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+}
