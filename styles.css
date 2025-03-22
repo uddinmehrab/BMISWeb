@@ -558,3 +558,53 @@ footer a:hover {
         font-size: 16px;
     }
 }
+
+/* Masjid Project Section */
+.masjid-project {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.masjid-project .project-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.masjid-project .project-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.masjid-project .project-info,
+.masjid-project .project-goals {
+    flex-basis: 48%;
+}
+
+.masjid-project .project-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.masjid-project .project-images img {
+    width: 48%;
+    border-radius: 10px;
+}
+
+.masjid-project .donation-info {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.quran-quote,
+.hadith-quote {
+    font-style: italic;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #e6f2ff;
+    border-left: 4px solid #1F665C;
+}
