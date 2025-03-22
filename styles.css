@@ -610,5 +610,21 @@ footer a:hover {
 }
 
 .future-masjid-hero {
-    background: url('img/future-masjid.jpeg') top center no-repeat;
+    background: url('img/future-masjid.jpg') top center no-repeat;
+}
+
+@media (max-width: 768px) {
+    .masjid-project .project-info,
+    .masjid-project .project-goals {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    .masjid-project .project-images {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .masjid-project .project-images img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
