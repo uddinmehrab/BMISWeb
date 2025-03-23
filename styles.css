@@ -799,3 +799,20 @@ footer a:hover {
 .dot.active {
     background-color: white;
 }
+
+.eid-announcement {
+    background: #fff;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.eid-announcement img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
