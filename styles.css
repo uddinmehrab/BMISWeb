@@ -243,6 +243,30 @@ nav {
     list-style-type: none;
 }
 
+.donation-info ul li {
+    margin-bottom: 12px;
+    padding: 5px 0;
+}
+
+.donation-info ul li strong {
+    display: inline-block;
+    color: #1F665C;
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+.donation-info ul li a {
+    color: #ff9800;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.donation-info ul li a:hover {
+    text-decoration: underline;
+    color: #e65100;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .service-cards {
