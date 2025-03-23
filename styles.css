@@ -625,6 +625,8 @@ footer a:hover {
 
 .future-masjid-hero {
     background: url('img/future-masjid.jpg') top center no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 @media (max-width: 768px) {
@@ -701,7 +703,8 @@ footer a:hover {
 .masjid-project-summary.hero {
     background: url('img/future-masjid.jpg') top center no-repeat;
     background-size: cover;
-    height: 100%;
+    background-position: center;
+    height: 100%; /* Match height of hero slide 1 */
     display: flex;
     align-items: center;
     justify-content: center;
