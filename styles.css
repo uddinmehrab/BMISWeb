@@ -235,6 +235,14 @@ nav {
     transform: translateY(-10px);
 }
 
+.card ul{
+    text-align: left;
+}
+
+.donation-info ul {
+    list-style-type: none;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .service-cards {
@@ -314,6 +322,10 @@ footer a:hover {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #1F665C;
+}
+
+.masjid-project-summary .section-title {
+    color: #ff9800;
 }
 
 .donate p {
@@ -540,6 +552,7 @@ footer a:hover {
     padding-left: 20px;
     text-align: left;
     display: inline-block;
+    list-style-type: none;
 }
 
 /* Mobile Responsive */
@@ -557,4 +570,179 @@ footer a:hover {
         padding: 10px 20px;
         font-size: 16px;
     }
+}
+
+/* Masjid Project Section */
+.masjid-project {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.masjid-project .project-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.masjid-project .project-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.masjid-project .project-info,
+.masjid-project .project-goals {
+    flex-basis: 48%;
+}
+
+.masjid-project .project-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.masjid-project .project-images img {
+    width: 48%;
+    border-radius: 10px;
+}
+
+.masjid-project .donation-info {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.quran-quote,
+.hadith-quote {
+    font-style: italic;
+    margin: 30px 0;
+    padding: 10px;
+    background-color: #e6f2ff;
+    border-left: 4px solid #1F665C;
+}
+
+.future-masjid-hero {
+    background: url('img/future-masjid.jpg') top center no-repeat;
+}
+
+@media (max-width: 768px) {
+    .masjid-project .project-info,
+    .masjid-project .project-goals {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    .masjid-project .project-images {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .masjid-project .project-images img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.progress-container {
+    background-color: #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    position: relative;
+}
+.progress-bar {
+    background-color: #ff9800;
+    color: white;
+    width: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 2s ease-in-out;
+    font-size: 0.9em;
+}
+.progress-stats {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.masjid-project-summary {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: 70vh;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.masjid-project-summary.hero {
+    background: url('img/future-masjid.jpg') top center no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.masjid-project-summary.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.masjid-project-summary.hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 3;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
 }
