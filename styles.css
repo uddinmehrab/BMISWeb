@@ -235,6 +235,14 @@ nav {
     transform: translateY(-10px);
 }
 
+.card ul{
+    text-align: left;
+}
+
+.donation-info ul {
+    list-style-type: none;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .service-cards {
@@ -540,6 +548,7 @@ footer a:hover {
     padding-left: 20px;
     text-align: left;
     display: inline-block;
+    list-style-type: none;
 }
 
 /* Mobile Responsive */
@@ -598,12 +607,13 @@ footer a:hover {
     padding: 20px;
     border-radius: 10px;
     margin-top: 40px;
+    text-align: center;
 }
 
 .quran-quote,
 .hadith-quote {
     font-style: italic;
-    margin: 20px 0;
+    margin: 30px 0;
     padding: 10px;
     background-color: #e6f2ff;
     border-left: 4px solid #1F665C;
