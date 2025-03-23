@@ -324,6 +324,10 @@ footer a:hover {
     color: #1F665C;
 }
 
+.masjid-project-summary .section-title {
+    color: #ff9800;
+}
+
 .donate p {
     font-size: 1.2em;
     margin: 0 auto 30px;
@@ -646,11 +650,11 @@ footer a:hover {
     height: 20px;
     width: 100%;
     max-width: 400px;
-    margin: 20px 0;
+    margin: 20px auto;
     position: relative;
 }
 .progress-bar {
-    background-color: #1F665C;
+    background-color: #ff9800;
     color: white;
     width: 0;
     height: 100%;
@@ -664,4 +668,81 @@ footer a:hover {
     text-align: center;
     font-weight: bold;
     margin: 10px 0;
+}
+
+.masjid-project-summary {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: 70vh;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.masjid-project-summary.hero {
+    background: url('img/future-masjid.jpg') top center no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.masjid-project-summary.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.masjid-project-summary.hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 3;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
 }
