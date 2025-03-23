@@ -2,10 +2,6 @@
     "version": 2,
     "rewrites": [
       {
-        "source": "/about",
-        "destination": "/about.html"
-      },
-      {
         "source": "/prayertimes",
         "destination": "/times.html"
       },
