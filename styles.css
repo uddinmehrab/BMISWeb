@@ -86,7 +86,7 @@ nav {
 }
 
 /* Hero Section */
-.hero, .hero-about, .hero-contact {
+.hero, .hero-contact {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,11 +108,6 @@ nav {
         /* Ensure the image covers the container while keeping aspect ratio */
         background-size: 100% auto;
     }
-}
-
-.hero-about {
-    background: url('about-hero.jpg') center/cover no-repeat;
-    height: 50vh;
 }
 
 .hero-contact {
@@ -162,7 +157,7 @@ nav {
     }
 }
 
-.hero h1, .hero-about .hero-content h1, .hero-contact .hero-content h1 {
+.hero h1, .hero-contact .hero-content h1 {
     font-size: 3em;
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -439,7 +434,6 @@ footer a:hover {
 }
 
 .about p {
-    font-size: 1.2em;
     margin-bottom: 25px;
 }
 
@@ -450,13 +444,13 @@ footer a:hover {
 
 /* Responsive Hero Text */
 @media (max-width: 768px) {
-    .hero h1, .hero-about .hero-content h1, .hero-contact .hero-content h1 {
+    .hero h1, .hero-contact .hero-content h1 {
         font-size: 2.5em;
     }
 }
 
 @media (max-width: 480px) {
-    .hero h1, .hero-about .hero-content h1, .hero-contact .hero-content h1 {
+    .hero h1, .hero-contact .hero-content h1 {
         font-size: 2em;
     }
 }
