@@ -105,8 +105,8 @@ nav {
 @media (min-width: 1200px) {
     .hero {
         background-position: top center;
-        /* Ensure the image covers the container while keeping aspect ratio */
-        background-size: 100% auto;
+        background-size: cover; /* Changed from 100% auto to cover */
+        height: 70vh; /* Ensure consistent height */
     }
 }
 
