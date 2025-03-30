@@ -38,11 +38,6 @@ section {
     text-align: center;
 }
 
-.services, .prayer-times, .donate, .about, .location, .contact, .full-year-calendar {
-    padding: 40px 20px;
-    text-align: center;
-}
-
 .services {
     background: var(--white);
 }
@@ -102,11 +97,7 @@ nav {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--accent-color);
-}
-
-.nav-links .active {
+.nav-links a:hover, .nav-links .active {
     color: var(--accent-color);
 }
 
@@ -221,18 +212,18 @@ nav {
     width: 30%;
 }
 
-.donation-card {
-    width: calc(33.33% - 20px);
-    max-width: 400px;
-    background: var(--white);
-}
-
 .card:hover {
     transform: translateY(-10px);
 }
 
 .card ul {
     text-align: left;
+}
+
+.donation-card {
+    width: calc(33.33% - 20px);
+    max-width: 400px;
+    background: var(--white);
 }
 
 .donation-card h2 {
@@ -284,7 +275,7 @@ footer {
     font-size: 0.9em;
 }
 
-footer a {
+footer a, .social-media a {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
@@ -295,7 +286,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-social-media {
+.social-media {
     margin: 15px 0;
     display: flex;
     justify-content: center;
@@ -306,10 +297,8 @@ social-media {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--accent-color);
     font-size: 1.1em;
     transition: all 0.3s ease;
-    text-decoration: none;
 }
 
 .social-media a img {
@@ -321,42 +310,24 @@ social-media {
     transform: translateY(-2px);
 }
 
-/* Donation Section */
-.donate p {
+/* Text content for various sections */
+.donate p, .contact p {
     font-size: 1.2em;
     margin: 0 auto 30px;
     max-width: 800px;
     color: #333;
 }
 
-/* About Section */
 .about p {
     margin-bottom: 25px;
 }
 
-/* Location Section */
-.location p {
+.location p, .contact-details p {
     font-size: 1.2em;
     margin-bottom: 15px;
 }
 
-.map iframe {
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
-
-/* Contact Section */
-.contact p {
-    font-size: 1.2em;
-    margin-bottom: 25px;
-    color: #333;
-}
-
-.contact-details p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-}
-
+/* Contact details links */
 .contact-details a {
     color: var(--primary-color);
     text-decoration: none;
@@ -365,6 +336,12 @@ social-media {
 
 .contact-details a:hover {
     text-decoration: underline;
+}
+
+/* Maps and iframes */
+.map iframe {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
 /* Full Year Calendar Section */
@@ -416,6 +393,7 @@ social-media {
     text-align: center;
 }
 
+/* Donation info styling */
 .donation-info ul {
     list-style-type: none;
 }
@@ -444,6 +422,7 @@ social-media {
     color: #e65100;
 }
 
+/* Quote styling */
 .quran-quote,
 .hadith-quote {
     font-style: italic;
@@ -453,12 +432,14 @@ social-media {
     border-left: 4px solid var(--primary-color);
 }
 
+/* Background image elements */
 .future-masjid-hero {
     background: url('img/future-masjid.jpg') top center no-repeat;
     background-size: cover;
     background-position: center;
 }
 
+/* Progress bar styles */
 .progress-container {
     background-color: #ccc;
     border-radius: 25px;
@@ -541,6 +522,7 @@ social-media {
     background-color: var(--accent-orange);
 }
 
+/* Masjid project summary hero styles */
 .masjid-project-summary.hero {
     background: url('img/future-masjid.jpg') top center no-repeat;
     background-size: cover;
@@ -568,19 +550,13 @@ social-media {
     z-index: 2;
 }
 
+/* Hero poster - use contain to keep aspect ratio */
 .hero-poster {
     background: url('img/masjid-project-poster.jpeg') center no-repeat;
     background-size: contain;
     width: 100%;
     height: 70vh;
     background-color: #f0f0f0;
-}
-
-@media (min-width: 1200px) {
-    .hero {
-        background-position: top center;
-        background-size: cover;
-    }
 }
 
 /* Announcement Styles */
@@ -600,7 +576,7 @@ social-media {
     border-radius: var(--border-radius);
 }
 
-/* Responsive Styles */
+/* Responsive Styles - All consolidated */
 @media (min-width: 1200px) {
     .hero {
         background-position: top center;
@@ -619,6 +595,7 @@ social-media {
 }
 
 @media (max-width: 768px) {
+    /* Navigation */
     .menu-toggle {
         display: block;
     }
@@ -633,6 +610,7 @@ social-media {
         display: flex;
     }
     
+    /* Brand styling */
     .brand {
         flex-direction: column;
     }
@@ -644,27 +622,22 @@ social-media {
         font-size: 2.5em;
     }
     
-    .service-cards {
+    /* Card layouts */
+    .service-cards, .donation-options {
         flex-direction: column;
         align-items: center;
     }
-    .card {
+    .card, .donation-card {
         width: 80%;
         margin-bottom: 20px;
     }
     
-    .donation-options {
-        flex-direction: column;
-        align-items: center;
-    }
-    .donation-card {
-        width: 100%;
-    }
-    
+    /* Text sizing */
     .hero h1, .hero-contact .hero-content h1 {
         font-size: 2.5em;
     }
     
+    /* Project layout */
     .masjid-project .project-info,
     .masjid-project .project-goals {
         flex-basis: 100%;
