@@ -763,8 +763,18 @@ footer a:hover {
 }
 
 .eid-announcement img {
-    max-width: 300px;
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+/* Scale up Eid announcement image on larger screens */
+@media (min-width: 768px) {
+    .eid-announcement img {
+        max-width: 500px;
+        height: auto;
+        transform: scale(1.1); /* Slightly larger */
+        margin: 30px auto; /* Center the image */
+        display: block; /* Make display block for margin auto to work */
+    }
 }
