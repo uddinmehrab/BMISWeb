@@ -7,9 +7,43 @@ body {
     line-height: 1.6;
     background-color: #f8f9fa;
 }
+
 h1, h2, h3 {
     color: #1F665C;
     font-weight: 700;
+}
+
+/* Color and Content Variables */
+:root {
+    --primary-color: #1F665C;
+    --secondary-color: #145A4C;
+    --accent-color: #FFD700;
+    --accent-orange: #ff9800;
+    --white: #fff;
+    --light-bg: #f8f9fa;
+    --dark-bg: #333;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+}
+
+/* Layout Components */
+.container {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.services {
+    background: var(--white);
+}
+
+.prayer-times, .donate, .about, .location, .contact, .full-year-calendar {
+    background: var(--light-bg);
 }
 
 /* Navigation Bar */
@@ -17,13 +51,13 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #1F665C;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
 .nav-header {
@@ -36,19 +70,18 @@ nav {
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: white
+    color: var(--white);
 }
 
 .menu-toggle {
     display: none;
     font-size: 1.5em;
     cursor: pointer;
-    color: white;
+    color: var(--white);
     background: none;
     border: none;
 }
 
-/* Navigation Links - Default Layout */
 .nav-links {
     display: flex;
     flex-wrap: wrap;
@@ -58,56 +91,30 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
     font-weight: 600;
     font-size: 1em;
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #FFD700; /* Gold Accent */
+.nav-links a:hover, .nav-links .active {
+    color: var(--accent-color);
 }
 
-/* Responsive Layout for Hamburger Menu */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Show hamburger menu on small screens */
-    }
-    .nav-links {
-        display: none; /* Hide navigation links by default */
-        flex-direction: column;
-        width: 100%;
-        background: #1F665C;
-        padding: 10px;
-    }
-    .nav-links.active {
-        display: flex; /* Show navigation links when active */
-    }
-}
-
-/* Hero Section */
+/* Hero Sections */
 .hero, .hero-contact {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: var(--white);
     position: relative;
+    height: 70vh;
 }
 
 .hero {
     background: url('img/mosque-hero.jpg') top center no-repeat;
     background-size: cover;
-    height: 70vh;
-}
-
-/* Add media query for large screens */
-@media (min-width: 1200px) {
-    .hero {
-        background-position: top center;
-        /* Ensure the image covers the container while keeping aspect ratio */
-        background-size: 100% auto;
-    }
 }
 
 .hero-contact {
@@ -117,44 +124,9 @@ nav {
 
 .hero-content {
     z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Slight shadow for readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
-    color: white;
-}
-
-/* Brand Container */
-.brand-logo {
-    width: 100px; /* Increase width for a larger size */
-    height: 100px; /* Match the height for proportional scaling */
-    object-fit: contain; /* Ensure the image doesn't get distorted */
-}
-
-/* Alignment Styling */
-.brand {
-    display: flex;
-    align-items: center; /* Vertically align the logo and text */
-    justify-content: center; /* Horizontally center them */
-    gap: 10px; /* Increase spacing between logo and text */
-}
-
-/* Text Styling */
-.brand-text {
-    font-size: 3.5em;
-    font-weight: bold;
-    color: white; /* Ensure text is readable */
-    margin: 0;
-}
-@media (max-width: 768px) {
-    .brand {
-        flex-direction: column; /* Stack logo and text vertically on smaller screens */
-    }
-    .brand-logo {
-        width: 60px;
-        height: 60px;
-    }
-    .brand-text {
-        font-size: 2.5em; /* Reduce font size for smaller screens */
-    }
+    color: var(--white);
 }
 
 .hero h1, .hero-contact .hero-content h1 {
@@ -162,17 +134,39 @@ nav {
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 .hero p {
     font-size: 1.5em;
     margin-bottom: 25px;
-    color: white; /* Ensure subtitle remains visible */
+    color: var(--white);
 }
 
-/* Button Styles - Consolidated */
-.cta-button, .btn{
+/* Brand Styling */
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.brand-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.brand-text {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: var(--white);
+    margin: 0;
+}
+
+/* Button Styles */
+.cta-button, .btn {
     display: inline-block;
-    background: #1F665C;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     padding: 10px 20px;
     font-size: 1em;
     font-weight: bold;
@@ -185,129 +179,111 @@ nav {
 }
 
 .cta-button:hover, .btn:hover {
-    background: #145A4C;
+    background: var(--secondary-color);
 }
 
 .cta-button a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
     display: inline-block;
     width: 100%;
     height: 100%;
 }
 
-/* Services Section */
-.services, .prayer-times, .donate, .about, .location, .contact, .full-year-calendar {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.services {
-    background: white;
-}
-
-.prayer-times, .donate, .about, .location, .contact, .full-year-calendar {
-    background: #f8f9fa;
-}
-
-/* Service Cards */
-.service-cards {
+/* Card Components */
+.service-cards, .donation-options {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
-.card {
-    background: #f8f9fa;
+
+.card, .donation-card {
+    background: var(--light-bg);
     padding: 20px;
-    border-radius: 15px;
-    width: 30%;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease;
+    text-align: center;
 }
+
+.card {
+    width: 30%;
+}
+
 .card:hover {
     transform: translateY(-10px);
 }
 
-.card ul{
+.card ul {
     text-align: left;
 }
 
-.donation-info ul {
-    list-style-type: none;
+.donation-card {
+    width: calc(33.33% - 20px);
+    max-width: 400px;
+    background: var(--white);
 }
 
-.donation-info ul li {
-    margin-bottom: 12px;
-    padding: 5px 0;
+.donation-card h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
-.donation-info ul li strong {
-    display: inline-block;
-    color: #1F665C;
-    font-size: 1.1em;
-    margin-right: 10px;
+.donation-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555;
 }
 
-.donation-info ul li a {
-    color: #ff9800;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.donation-info ul li a:hover {
-    text-decoration: underline;
-    color: #e65100;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .service-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-    .card {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-}
-
-.prayer-times {
-    background: #f8f9fa; /* Light background */
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.prayer-times h2 {
+/* Section Titles */
+.section-title, .services h2, .prayer-times h2, .location h2, .contact h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #1F665C; /* Match your theme color */
+    color: var(--primary-color);
 }
 
-.prayer-times-widget {
-    max-width: 800px; /* Set a max width for the widget */
-    margin: 0 auto; /* Center the widget */
-    border: 1px solid #ddd; /* Optional: Add a border around the widget */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    overflow: hidden; /* Ensure clean display */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+.masjid-project-summary .section-title {
+    color: var(--accent-orange);
 }
+
+/* Prayer Times Widget */
+.prayer-times-widget {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
 .spinner {
     font-size: 1.2em;
-    color: #1F665C;
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-    background: #333;
-    color: white;
+    background: var(--dark-bg);
+    color: var(--white);
     text-align: center;
     padding: 20px 0;
     font-size: 0.9em;
+}
+
+footer a, .social-media a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: var(--white);
+    text-decoration: underline;
 }
 
 .social-media {
@@ -321,10 +297,8 @@ footer {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #FFD700;
     font-size: 1.1em;
     transition: all 0.3s ease;
-    text-decoration: none;
 }
 
 .social-media a img {
@@ -336,181 +310,26 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-footer a {
-    color: #FFD700; /* Gold color for the link */
-    text-decoration: none; /* Removes the underline */
-    font-weight: bold; /* Makes the text bold */
-}
-
-footer a:hover {
-    color: #FFF; /* Changes to white on hover */
-    text-decoration: underline; /* Adds an underline on hover for clarity */
-}
-
-/* Donate Section */
-.donate {
-    padding: 40px 20px;
-    text-align: center;
-    background: #f8f9fa; /* Light background */
-}
-
-.section-title, .services h2, .prayer-times h2, .location h2, .contact h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #1F665C;
-}
-
-.masjid-project-summary .section-title {
-    color: #ff9800;
-}
-
-.donate p {
+/* Text content for various sections */
+.donate p, .contact p {
     font-size: 1.2em;
     margin: 0 auto 30px;
     max-width: 800px;
     color: #333;
 }
 
-.donation-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.donation-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: calc(33.33% - 20px);
-    max-width: 400px;
-}
-
-.donation-card h2 {
-    font-size: 1.8em;
-    color: #1F665C;
-    margin-bottom: 15px;
-}
-
-.donation-card p {
-    font-size: 1em;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-    .donation-options {
-        flex-direction: column;
-        align-items: center;
-    }
-    .donation-card {
-        width: 100%;
-    }
-}
-
-/* About Section */
-.about {
-    padding: 60px 20px;
-    background: #f8f9fa;
-    color: #333;
-}
-
-.about .container {
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-}
-
 .about p {
     margin-bottom: 25px;
 }
 
-/* Active Navigation Link */
-.nav-links .active {
-    color: #FFD700; /* Gold color to indicate active page */
-}
-
-/* Responsive Hero Text */
-@media (max-width: 768px) {
-    .hero h1, .hero-contact .hero-content h1 {
-        font-size: 2.5em;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1, .hero-contact .hero-content h1 {
-        font-size: 2em;
-    }
-}
-
-/* Location Section */
-.location {
-    padding: 40px 20px;
-    background: #f8f9fa;
-    text-align: center;
-    color: #333;
-}
-
-.location h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #1F665C;
-}
-
-.location p {
+.location p, .contact-details p {
     font-size: 1.2em;
     margin-bottom: 15px;
 }
 
-.map iframe {
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Contact Section */
-.contact {
-    padding: 60px 20px;
-    background: #f8f9fa;
-    text-align: center;
-}
-
-.contact .container {
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-}
-
-.contact h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #1F665C;
-}
-
-.contact p {
-    font-size: 1.2em;
-    margin-bottom: 25px;
-    color: #333;
-}
-
-.contact-details p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-}
-
+/* Contact details links */
 .contact-details a {
-    color: #1F665C;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -519,49 +338,17 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Full Year Calendar Section */
-.full-year-calendar {
-    padding: 40px 20px;
-    background: #f8f9fa;
-    text-align: center;
+/* Maps and iframes */
+.map iframe {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
+/* Full Year Calendar Section */
 .full-year-calendar h3 {
     font-size: 1.8em;
     margin-bottom: 15px;
-    color: #1F665C;
-}
-
-@keyframes flash-border {
-    0% {
-        border-color: #d32f2f;
-    }
-    50% {
-        border-color: #fbc02d;
-    }
-    100% {
-        border-color: #d32f2f;
-    }
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-    .btn {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-    .social-media {
-        flex-direction: column;
-        align-items: center;
-    }
-    .social-media a {
-        font-size: 0.9em;
-        gap: 10px;
-    }
-    .social-media a img {
-        width: 20px;
-        height: 20px;
-    }
+    color: var(--primary-color);
 }
 
 /* Masjid Project Section */
@@ -595,57 +382,64 @@ footer a:hover {
 
 .masjid-project .project-images img {
     width: 48%;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 .masjid-project .donation-info {
     background-color: #f0f0f0;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     margin-top: 40px;
     text-align: center;
 }
 
+/* Donation info styling */
+.donation-info ul {
+    list-style-type: none;
+}
+
+.donation-info ul li {
+    margin-bottom: 12px;
+    padding: 5px 0;
+}
+
+.donation-info ul li strong {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+.donation-info ul li a {
+    color: var(--accent-orange);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.donation-info ul li a:hover {
+    text-decoration: underline;
+    color: #e65100;
+}
+
+/* Quote styling */
 .quran-quote,
 .hadith-quote {
     font-style: italic;
     margin: 30px 0;
     padding: 10px;
     background-color: #e6f2ff;
-    border-left: 4px solid #1F665C;
+    border-left: 4px solid var(--primary-color);
 }
 
+/* Background image elements */
 .future-masjid-hero {
     background: url('img/future-masjid.jpg') top center no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.hero-poster {
-    background: url('img/masjid-project-poster.jpeg') center/cover no-repeat;
-    width: 100%;
-    height: 70vh;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-@media (max-width: 768px) {
-    .masjid-project .project-info,
-    .masjid-project .project-goals {
-        flex-basis: 100%;
-        margin-bottom: 20px;
-    }
-    .masjid-project .project-images {
-        flex-direction: column;
-        margin-top: 20px;
-    }
-    .masjid-project .project-images img {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
+/* Progress bar styles */
 .progress-container {
     background-color: #ccc;
     border-radius: 25px;
@@ -656,9 +450,10 @@ footer a:hover {
     margin: 20px auto;
     position: relative;
 }
+
 .progress-bar {
-    background-color: #ff9800;
-    color: white;
+    background-color: var(--accent-orange);
+    color: var(--white);
     width: 0;
     height: 100%;
     display: flex;
@@ -667,6 +462,7 @@ footer a:hover {
     transition: width 2s ease-in-out;
     font-size: 0.9em;
 }
+
 .progress-stats {
     text-align: center;
     font-weight: bold;
@@ -702,11 +498,36 @@ footer a:hover {
     z-index: 2;
 }
 
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 3;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--white);
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dot.active {
+    background-color: var(--accent-orange);
+}
+
+/* Masjid project summary hero styles */
 .masjid-project-summary.hero {
     background: url('img/future-masjid.jpg') top center no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100%; /* Match height of hero slide 1 */
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -729,52 +550,130 @@ footer a:hover {
     z-index: 2;
 }
 
-.carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    z-index: 3;
+/* Hero poster - use contain to keep aspect ratio */
+.hero-poster {
+    background: url('img/masjid-project-poster.jpeg') center no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 70vh;
+    background-color: #f0f0f0;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    margin: 0 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background-color: white;
-}
-
+/* Announcement Styles */
 .eid-announcement {
-    background: #fff;
+    background: var(--white);
     color: #333;
     text-align: center;
     padding: 20px;
     margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
 .eid-announcement img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
-/* Scale up Eid announcement image on larger screens */
+/* Responsive Styles - All consolidated */
+@media (min-width: 1200px) {
+    .hero {
+        background-position: top center;
+        background-size: cover;
+    }
+}
+
 @media (min-width: 768px) {
     .eid-announcement img {
         max-width: 500px;
         height: auto;
-        transform: scale(1.1); /* Slightly larger */
-        margin: 30px auto; /* Center the image */
-        display: block; /* Make display block for margin auto to work */
+        transform: scale(1.1);
+        margin: 30px auto;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navigation */
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--primary-color);
+        padding: 10px;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    
+    /* Brand styling */
+    .brand {
+        flex-direction: column;
+    }
+    .brand-logo {
+        width: 60px;
+        height: 60px;
+    }
+    .brand-text {
+        font-size: 2.5em;
+    }
+    
+    /* Card layouts */
+    .service-cards, .donation-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card, .donation-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    /* Text sizing */
+    .hero h1, .hero-contact .hero-content h1 {
+        font-size: 2.5em;
+    }
+    
+    /* Project layout */
+    .masjid-project .project-info,
+    .masjid-project .project-goals {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    .masjid-project .project-images {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .masjid-project .project-images img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .social-media {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-media a {
+        font-size: 0.9em;
+        gap: 10px;
+    }
+    .social-media a img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1, .hero-contact .hero-content h1 {
+        font-size: 2em;
     }
 }
