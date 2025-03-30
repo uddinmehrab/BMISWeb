@@ -1,54 +1,81 @@
+// Main initialization function
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
+    initMobileMenu();
+    initProgressBar();
 });
 
-window.addEventListener('load', () => {
+// Initialize mobile navigation menu
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    }
+}
+
+// Initialize progress bar
+function initProgressBar() {
     const progressBar = document.querySelector('.progress-bar');
     if (progressBar) {
-        const percentage = progressBar.getAttribute('data-percentage');
-        progressBar.style.width = `${percentage}%`;
+        // Use requestAnimationFrame for smoother animation
+        requestAnimationFrame(() => {
+            const percentage = progressBar.getAttribute('data-percentage');
+            progressBar.style.width = `${percentage}%`;
+        });
     }
+}
 
-    // Carousel functionality
-    let currentSlide = 0;
+// Initialize carousel when page is fully loaded
+window.addEventListener('load', () => {
+    initCarousel();
+});
+
+// Initialize carousel functionality
+function initCarousel() {
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
-    let carouselInterval;
+    
+    // Only initialize if carousel elements exist
+    if (slides.length > 0 && dots.length > 0) {
+        let currentSlide = 0;
+        let carouselInterval;
 
-    // Initialize carousel
-    function startCarousel() {
-        carouselInterval = setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
-        }, 5000); // Change slide every 5 seconds
-    }
-
-    // Update carousel to show current slide
-    function updateCarousel() {
-        slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === currentSlide);
-        });
-        
+        // Add click event listeners to dots
         dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel(slides, dots, currentSlide);
+                resetCarouselTimer();
+            });
         });
-    }
 
-    // Add click event listeners to dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            updateCarousel();
-            // Restart timer when manually changing slides
+        // Start the carousel
+        startCarousel();
+
+        // Start automatic carousel rotation
+        function startCarousel() {
+            carouselInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateCarousel(slides, dots, currentSlide);
+            }, 5000); // Change slide every 5 seconds
+        }
+
+        // Reset carousel timer when manually changing slides
+        function resetCarouselTimer() {
             clearInterval(carouselInterval);
             startCarousel();
-        });
-    });
-
-    // Start carousel when page loads
-    if (slides.length > 0) {
-        startCarousel();
+        }
     }
-});
+}
+
+// Update carousel to show current slide
+function updateCarousel(slides, dots, currentSlide) {
+    slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+    });
+    
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
