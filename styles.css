@@ -576,6 +576,97 @@ footer a:hover {
     border-radius: var(--border-radius);
 }
 
+/* QR Code Section */
+.qr-codes {
+    padding: 30px 20px;
+    text-align: center;
+    background: var(--white);
+    margin-top: 20px;
+}
+
+.qr-codes h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.qr-card {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    width: 200px;
+}
+
+.qr-card:hover {
+    transform: translateY(-5px);
+}
+
+.qr-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.qr-card p {
+    margin: 0;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Increased QR card size for larger screens */
+@media (min-width: 768px) {
+    .qr-card {
+        width: 250px;
+        padding: 25px;
+    }
+    
+    .qr-card img {
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+    
+    .qr-card p {
+        font-size: 1.1em;
+    }
+}
+
+/* Further increase size for desktop screens */
+@media (min-width: 1200px) {
+    .qr-card {
+        width: 400px;
+        padding: 40px;
+    }
+    
+    .qr-card img {
+        max-width: 350px;
+        margin-bottom: 35px;
+    }
+    
+    .qr-card p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .qr-container {
+        gap: 15px;
+    }
+    
+    .qr-card {
+        width: 150px;
+        padding: 15px;
+    }
+}
+
 /* Responsive Styles - All consolidated */
 @media (min-width: 1200px) {
     .hero {
