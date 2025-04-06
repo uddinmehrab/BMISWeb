@@ -238,6 +238,11 @@ nav {
     color: #555;
 }
 
+.donation-card img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Section Titles */
 .section-title, .services h2, .prayer-times h2, .location h2, .contact h2 {
     font-size: 2.5em;
