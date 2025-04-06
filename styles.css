@@ -564,23 +564,6 @@ footer a:hover {
     background-color: #f0f0f0;
 }
 
-/* Announcement Styles */
-.eid-announcement {
-    background: var(--white);
-    color: #333;
-    text-align: center;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-}
-
-.eid-announcement img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
-}
-
 /* QR Code Section */
 .qr-codes {
     padding: 30px 20px;
@@ -742,16 +725,6 @@ footer a:hover {
     .hero {
         background-position: top center;
         background-size: cover;
-    }
-}
-
-@media (min-width: 768px) {
-    .eid-announcement img {
-        max-width: 500px;
-        height: auto;
-        transform: scale(1.1);
-        margin: 30px auto;
-        display: block;
     }
 }
 
