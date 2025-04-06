@@ -1,9 +1,22 @@
 // Main initialization function
 document.addEventListener('DOMContentLoaded', function() {
-    initMobileMenu();
+    loadPartial('nav-placeholder','/components/nav.html')
+      .then(() => {
+        initMobileMenu();
+        highlightCurrentPage();
+      });
+    loadPartial('footer-placeholder','/components/footer.html');
     initProgressBar();
-    highlightCurrentPage();
 });
+
+// Fetch and inject partial HTML content
+function loadPartial(placeholderId, url) {
+    return fetch(url)
+      .then(res => res.text())
+      .then(html => {
+          document.getElementById(placeholderId).innerHTML = html;
+      });
+}
 
 // Initialize mobile navigation menu
 function initMobileMenu() {
