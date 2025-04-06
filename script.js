@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initProgressBar();
+    highlightCurrentPage();
 });
 
 // Initialize mobile navigation menu
@@ -24,6 +25,23 @@ function initProgressBar() {
             progressBar.style.width = `${percentage}%`;
         });
     }
+}
+
+// Highlight current page in navigation
+function highlightCurrentPage() {
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        
+        // Check if current page ends with the link's href or if both are home pages
+        if (currentPage.endsWith(linkPath) || 
+            (currentPage.endsWith('/') && linkPath === 'index.html') ||
+            (currentPage === '' && linkPath === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
 }
 
 // Initialize carousel when page is fully loaded
