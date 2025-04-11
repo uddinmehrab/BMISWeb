@@ -618,6 +618,27 @@ footer a:hover {
     font-size: 1.2em;
 }
 
+/* Fundraising Dinner Section */
+.fundraising-dinner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1px 40px 40px;
+    text-align: center;
+    background: var(--white);
+}
+
+.fundraising-dinner img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.fundraising-dinner.card {
+    width: auto;
+    margin: 30px auto;
+}
+
 /* Responsive QR card sizes - match closer to Eid announcement */
 @media (min-width: 768px) {
     .qr-card {
