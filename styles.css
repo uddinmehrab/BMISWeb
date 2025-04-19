@@ -655,14 +655,14 @@ footer a:hover {
 
 /* Video Section */
 .video-section {
-    padding: 30px 20px;
+    padding: 1px 20px 30px;
     text-align: center;
 }
 
 .video-section.card {
     width: auto;
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 740px;
+    margin: 0px auto;
     background: var(--white);
 }
 
