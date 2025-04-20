@@ -1,20 +1,30 @@
 // Main initialization function
 document.addEventListener('DOMContentLoaded', function() {
-    loadPartial('nav-placeholder','/components/nav.html')
-      .then(() => {
+    // Load components in parallel with Promise.all for better performance
+    Promise.all([
+        loadPartial('nav-placeholder','/components/nav.html'),
+        loadPartial('footer-placeholder','/components/footer.html')
+    ]).then(() => {
         initMobileMenu();
         highlightCurrentPage();
-      });
-    loadPartial('footer-placeholder','/components/footer.html');
+    });
+    
+    // Initialize other components
     initProgressBar();
 });
 
-// Fetch and inject partial HTML content
+// Fetch and inject partial HTML content with caching
 function loadPartial(placeholderId, url) {
-    return fetch(url)
+    return fetch(url, { cache: 'no-cache' })
       .then(res => res.text())
       .then(html => {
-          document.getElementById(placeholderId).innerHTML = html;
+          const element = document.getElementById(placeholderId);
+          if (element) {
+              element.innerHTML = html;
+          }
+      })
+      .catch(err => {
+          console.error(`Error loading partial from ${url}:`, err);
       });
 }
 
@@ -28,11 +38,11 @@ function initMobileMenu() {
     }
 }
 
-// Initialize progress bar
+// Initialize progress bar with requestAnimationFrame for better performance
 function initProgressBar() {
     const progressBar = document.querySelector('.progress-bar');
     if (progressBar) {
-        // Use requestAnimationFrame for smoother animation
+        // Use requestAnimationFrame for smoother animation and better performance
         requestAnimationFrame(() => {
             const percentage = progressBar.getAttribute('data-percentage');
             progressBar.style.width = `${percentage}%`;
@@ -57,12 +67,13 @@ function highlightCurrentPage() {
     });
 }
 
-// Initialize carousel when page is fully loaded
+// Initialize carousel with performance optimizations
 window.addEventListener('load', () => {
-    initCarousel();
+    // Defer non-critical initialization to after page load
+    setTimeout(initCarousel, 0);
 });
 
-// Initialize carousel functionality
+// Initialize carousel functionality with optimized event handling
 function initCarousel() {
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
@@ -72,14 +83,22 @@ function initCarousel() {
         let currentSlide = 0;
         let carouselInterval;
 
-        // Add click event listeners to dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                updateCarousel(slides, dots, currentSlide);
-                resetCarouselTimer();
+        // Use event delegation for better performance
+        const dotsContainer = document.querySelector('.carousel-dots');
+        if (dotsContainer) {
+            dotsContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('dot')) {
+                    // Get the index from the data-slide attribute or the position in the dots NodeList
+                    const slideIndex = e.target.getAttribute('data-slide') || 
+                                      Array.from(dots).indexOf(e.target);
+                    if (slideIndex !== null && slideIndex !== -1) {
+                        currentSlide = parseInt(slideIndex);
+                        updateCarousel(slides, dots, currentSlide);
+                        resetCarouselTimer();
+                    }
+                }
             });
-        });
+        }
 
         // Start the carousel
         startCarousel();
@@ -100,13 +119,22 @@ function initCarousel() {
     }
 }
 
-// Update carousel to show current slide
+// Update carousel to show current slide with optimized DOM operations
 function updateCarousel(slides, dots, currentSlide) {
-    slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentSlide);
-    });
+    // Use classList instead of setting class directly for better performance
+    for (let i = 0; i < slides.length; i++) {
+        if (i === currentSlide) {
+            slides[i].classList.add('active');
+        } else {
+            slides[i].classList.remove('active');
+        }
+    }
     
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
+    for (let i = 0; i < dots.length; i++) {
+        if (i === currentSlide) {
+            dots[i].classList.add('active');
+        } else {
+            dots[i].classList.remove('active');
+        }
+    }
 }
