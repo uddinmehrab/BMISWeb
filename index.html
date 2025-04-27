@@ -4,6 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | BMIS</title>
+    <!-- Critical CSS inlined for better performance -->
+    <style>
+        /* Critical path CSS - only what's needed for initial render */
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #1F665C;
+            color: #fff;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            height: 70vh;
+            background: url('img/mosque-hero.jpg') top center no-repeat;
+            background-size: cover;
+        }
+        .hero-content {
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: #fff;
+        }
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            height: 70vh;
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+    </style>
+    <!-- Preload critical hero image -->
+    <link rel="preload" href="img/mosque-hero.jpg" as="image" type="image/jpeg">
     <!-- Preconnect to Google Fonts domain -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +131,7 @@
 
     <section class="fundraising-dinner services card">
         <h2 class="section-title">Fundraising Dinner</h2>
-        <img src="img/fundraising-dinner.jpeg" alt="Fundraising Dinner">
+        <img src="img/fundraising-dinner.jpeg" alt="Fundraising Dinner" loading="lazy">
         <p>Join us for our annual Fundraising Dinner and support the ongoing Masjid project.</p>
         <button class="cta-button buy-tickets">
             <a href="https://www.eventbrite.ca/e/fundraising-dinner-in-aid-of-building-mosque-tickets-1323028797749" target="_blank">
@@ -83,7 +145,8 @@
         <h2 class="section-title">Imam's Appeal for the New Masjid</h2>
         <div class="video-container">
             <iframe src="https://drive.google.com/file/d/1E_2rl_AxJ_sahz60_Glq822SlJgPqOq7/preview" 
-                    allow="autoplay" title="video-appeal-masjid-project" allowfullscreen></iframe>
+                    allow="autoplay" title="video-appeal-masjid-project" 
+                    allowfullscreen loading="lazy"></iframe>
         </div>
         <p>Watch this special message from our Imam about supporting the new Masjid project</p>
     </section>
@@ -93,11 +156,11 @@
         <h2>Scan to Donate</h2>
         <div class="qr-container">
             <div class="qr-card">
-                <img src="img/launchgood-donate-qr.png" alt="LaunchGood Donation QR Code">
+                <img src="img/launchgood-donate-qr.png" alt="LaunchGood Donation QR Code" loading="lazy">
                 <p>Donate via LaunchGood</p>
             </div>
             <div class="qr-card">
-                <img src="img/gofundme-donate-qr.png" alt="GoFundMe Donation QR Code">
+                <img src="img/gofundme-donate-qr.png" alt="GoFundMe Donation QR Code" loading="lazy">
                 <p>Donate via GoFundMe</p>
             </div>
         </div>
@@ -125,7 +188,22 @@
     <!-- Prayer Times Section -->
     <section class="prayer-times">
         <h2>Today's Prayer Times</h2>
-        <script type="text/javascript">(function(w){function async_load(){var s=w.document.createElement('script');s.type='text/javascript';s.async=true;s.defer=true;s.src='https://masjidbox.com/widgets/loader.js';var x=w.document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);} if(w.attachEvent)w.attachEvent('onload',async_load);else w.addEventListener('load',async_load,false);})(window);</script><a data-masjidbox-widget="hwiXE0gYbtrdnGlqU151X" data-masjidbox-ifr href="https://masjidbox.com/prayer-times/baitul-mukarram-islamic-society">LOADING... Please wait a few seconds.</a>
+        <script type="text/javascript">
+            // Defer non-critical third-party script loading
+            window.addEventListener('load', function() {
+                function async_load(){
+                    var s=document.createElement('script');
+                    s.type='text/javascript';
+                    s.async=true;
+                    s.defer=true;
+                    s.src='https://masjidbox.com/widgets/loader.js';
+                    var x=document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s,x);
+                }
+                async_load();
+            });
+        </script>
+        <a data-masjidbox-widget="hwiXE0gYbtrdnGlqU151X" data-masjidbox-ifr href="https://masjidbox.com/prayer-times/baitul-mukarram-islamic-society">LOADING... Please wait a few seconds.</a>
     </section>
 
     <!-- About Section -->
