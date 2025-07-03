@@ -639,6 +639,20 @@ footer a:hover {
     margin: 30px auto;
 }
 
+/* Buy Tickets Button */
+.buy-tickets {
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-size: 1.1em;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
 /* Video Section */
 .video-section {
     padding: 1px 20px 30px;
